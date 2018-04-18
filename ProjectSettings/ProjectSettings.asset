@@ -577,7 +577,7 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
-    1: TOUCHSCRIPT_DEBUG
+    1: TOUCHSCRIPT_DEBUG;TOUCHSCRIPT_TUIO
   platformArchitecture: {}
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
