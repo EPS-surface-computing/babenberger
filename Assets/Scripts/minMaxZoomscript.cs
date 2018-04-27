@@ -19,6 +19,7 @@ public class minMaxZoomscript : MonoBehaviour {
 	void Update () {
 		TransformGesture gesture = this.GetComponent<TransformGesture>();
 		var state = gesture.State;
+		//enforceBoundaries();
 		if(state.Equals(TransformGesture.GestureState.Changed)){
 			savePivotPoint(gesture);
 		}
@@ -40,17 +41,17 @@ public class minMaxZoomscript : MonoBehaviour {
 	void enforceBoundaries(){
 		Vector3 currentPos = this.transform.localPosition;
 		Vector3 localScale = this.transform.localScale;
-		Vector3 newScale = new Vector3(minScale,minScale,minScale);
+		//Vector3 newScale = new Vector3(minScale,minScale,minScale);
 		//Debug.Log(localScale);
 		if(localScale.x > maxScale){
-			newScale = new Vector3(maxScale,maxScale,maxScale);
+			Vector3 newScale = new Vector3(maxScale,maxScale,maxScale);
 			moveToDesiredScale(newScale);
 		}
 		if(localScale.x < minScale){
-			newScale = new Vector3(minScale,minScale,minScale);
+			Vector3 newScale = new Vector3(minScale,minScale,minScale);
 			moveToDesiredScale(newScale);
 		}
-		this.transform.localPosition = currentPos;
+		//this.transform.localPosition = currentPos;
 	}
 
 	private void moveToDesiredScale(Vector3 desiredScale){
